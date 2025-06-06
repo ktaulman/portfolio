@@ -2,6 +2,7 @@ export interface Project {
     id: number;
     title: string;
     summary: string;
+    description: string[];
     url: string;
     startYear: number;
     endYear: number;

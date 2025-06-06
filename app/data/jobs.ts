@@ -6,7 +6,7 @@ export interface Job {
     title: string;
     location: string;
     summary: string;
-    images: {
+    images?: {
         src: string;
         alt: string;
         title: string;
@@ -31,7 +31,9 @@ const jobs: Job[] = [
         images: [
             {
                 src: '/images/cereTax.png',
-                alt: 'CereTax Logo'
+                alt: 'CereTax Logo',
+                title: '',
+                description: ''
             }
         ],
         startMonthYear: '10/2022',

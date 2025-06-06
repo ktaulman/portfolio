@@ -1,6 +1,6 @@
-import { getJob } from "@/app/data/jobs";
+import { getJob } from "../../data/jobs";
 import { notFound } from "next/navigation";
-import JobCard from "../components/JobCard";
+import JobCard from "./components/JobCard";
 
 
 export default async function JobsPage({ params }: { params: Promise<{ id: string }> }) {
