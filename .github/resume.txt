@@ -1,0 +1,43 @@
+# Education
+
+**University of Central Florida**  
+August 2007 – May 2012  
+Bachelor's, Marketing
+
+# Professional Experience
+
+## CereTax — Alpharetta, GA, USA  
+**UI Engineer**  
+October 2022 – November 2024  
+- Contributed to frontend development of a Fintech SaaS platform for tax liability automation, targeting midmarket and enterprise users in Telecom, SaaS, and Corporate Accounting.
+- Reduced Svelte backlog bugs by 95% through troubleshooting and refactoring, improving UI/UX.
+- Provided feedback on API/Service-layer code to recommend data model normalization and CRUD improvements.
+- Led frontend SDLC for the portal’s React version, collaborating cross-functionally to balance Svelte features and React refactoring.
+- Responsibilities included: creating Agile sprint stories, writing test acceptance criteria, UI design documentation, code review, version control, onboarding, and tool selection.
+- Added features: dynamic routing (React Router), centralized API service (Axios), increased TypeScript coverage to 90%+, custom form validation (Zod), improved performance (React Query), state memoization (Zustand), design patterns (Zustand & MUI), CRUD centralization (React Router v6.4), test automation (Playwright POC), and component libraries (MUI & AgGrid).
+
+## RE/MAX — Atlanta, GA, USA  
+**Frontend Engineer**  
+October 2021 – July 2022  
+- Developed and maintained a greenfield data visualization web app for national real estate datasets, delivered ahead of schedule and under budget.
+- Built as a Vue SPA with VueX for state management and Vue Router for protected routing.
+- Integrated Google Maps for interactive heatmaps, demographic display cards, custom filtering, and gesture-based refreshing.
+
+## Autumn Doors — Atlanta, GA, USA  
+**Fullstack Developer**  
+February 2021 – September 2021  
+- Developed a greenfield e-commerce site for sliding barn doors in Texas and Florida.
+- Frontend in React; backend in Node.js, deployed on AWS (S3, EC2, Route 53, CloudFront, ACM).
+- Features: Stripe payments, interactive door builder, invoice/order templating with email notifications, and tax compliance service.
+
+## Twilio — San Francisco, CA, USA  
+**Commercial Account Executive**  
+September 2017 – November 2018
+
+## Gartner — Fort Myers, FL, USA  
+**Account Executive**  
+August 2012 – September 2017
+
+# Skills
+
+HTML, CSS, JavaScript (ES6), TypeScript, Node.js, React.js, Next.js, React Router, Redux.js, React Context, React Hooks, Zustand, AgGrid, Material UI, Vue.js, Vue Router, VueX, Svelte, SvelteKit, Tailwind, Zod, Vite, Axios, Git, AWS, CloudFront, Route 53, Google Cloud, Stripe, REST APIs, JSON, CI/CD
