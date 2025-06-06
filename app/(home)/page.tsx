@@ -1,4 +1,4 @@
-import ExperienceList from "../_components/ExperienceList";
+import ExperienceList from "../_components/experience-list";
 import Intro from "@/app/(home)/components/intro-header";
 import WorkExperience from "@/app/(home)/components/work-experience";
 import PersonalExperience from "@/app/(home)/components/personal-experience";

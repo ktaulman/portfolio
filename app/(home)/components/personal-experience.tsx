@@ -1,4 +1,4 @@
-import ExperienceList from "@/app/_components/ExperienceList";
+import ExperienceList from "@/app/_components/experience-list";
 import { listProjects } from "@/app/data";
 
 export default async function PersonalExperience() {
