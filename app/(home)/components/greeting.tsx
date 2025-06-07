@@ -1,6 +1,6 @@
 import ExperienceList from "@/app/_components/experience-list";
 
-export default function Intro() {
+export default function Greeting() {
   return (
     <ExperienceList.Item>
       <ExperienceList.Title>Hi, I'm Kevin</ExperienceList.Title>

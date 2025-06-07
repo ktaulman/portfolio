@@ -17,22 +17,37 @@ function Title({ children }: { children: ReactNode }) {
   return <h2 className="w-1/4 ">{children}</h2>;
 }
 function Description({ children }: { children: ReactNode }) {
-  return <p className="w-3/4 text-sm flex flex-col gap-6">{children}</p>;
+  return (
+    <p className="w-3/4 text-sm flex flex-col gap-6 items-start ">{children}</p>
+  );
 }
-function NavigationLink({
-  children,
-  href,
-}: {
+interface NavigationLinkProps {
   children: ReactNode;
   href: string;
-}) {
+}
+
+function NavigationLink({ children, href }: NavigationLinkProps) {
   return (
     <Link
-      className={"w-full underline underline-offset-6 text-blue-900"}
+      className={"w-full underline underline-offset-4 text-blue-900"}
       href={href}
     >
       {children}
     </Link>
+  );
+}
+interface ExternalLinkProps {
+  children: ReactNode;
+  href: string;
+}
+function ExternalLink({ children, href }: ExternalLinkProps) {
+  return (
+    <a
+      className="w-full underline underline-offset-4 text-blue-900"
+      href={href}
+    >
+      {children}
+    </a>
   );
 }
 
@@ -40,5 +55,6 @@ ExperienceList.Item = Item;
 ExperienceList.Title = Title;
 ExperienceList.Description = Description;
 ExperienceList.NavigationLink = NavigationLink;
+ExperienceList.ExternalLink = ExternalLink;
 
 export default ExperienceList;

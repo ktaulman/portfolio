@@ -1,5 +1,5 @@
 import ExperienceList from "@/app/_components/experience-list";
-import { Job, listJobs } from "../../data/jobs";
+import { Job, listJobs } from "../../_db/jobs";
 
 export default async function WorkExperience() {
   const jobs = await listJobs();
