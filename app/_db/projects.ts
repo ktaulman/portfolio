@@ -31,7 +31,7 @@ const projects: Project[] = [
       "Searched and updated a Google Sheet with RSVPs, meal choices, and plus ones. that was editable by my wife and I.",
       "Written in Sveltekit. Deployed on Vercel infrastructure as an SSR application.",
     ],
-    website: "kevinandjessica.com",
+    website: "wedding.talldev.cloud",
     startYear: 2023,
     endYear: 2023,
   },
