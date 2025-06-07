@@ -1,6 +1,5 @@
 import List from "@/app/_components/experience-list";
 import ExternalLink from "@/app/_components/links/external-link";
-import NavigationLink from "@/app/_components/links/navigation-link";
 import { Job, listJobs } from "@/app/_db/jobs";
 
 export default async function WorkExperience() {
