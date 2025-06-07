@@ -1,4 +1,5 @@
 import List from "@/app/_components/experience-list";
+import ExternalLink from "@/app/_components/links/external-link";
 import NavigationLink from "@/app/_components/links/navigation-link";
 import { Job, listJobs } from "@/app/_db/jobs";
 
@@ -24,9 +25,9 @@ export default async function WorkExperience() {
               if (summary.length > 0) {
                 return (
                   <List.Item key={id}>
-                    <NavigationLink key={id} href={`/job/${id}`}>
+                    <ExternalLink key={id} href={`/job/${id}`}>
                       {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
-                    </NavigationLink>
+                    </ExternalLink>
                   </List.Item>
                 );
               } else
