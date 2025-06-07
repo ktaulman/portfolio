@@ -8,7 +8,7 @@ interface ListProps {
 }
 function List({ children, gap }: ListProps) {
   const className = clsx([
-    "flex flex-col items-between text-base tracking-wider text-black ",
+    "flex flex-col items-between tracking-wider text-black ",
     { "gap-[0px]": gap === "none" },
     { "gap-[10px]": gap === "xs" },
     { "gap-[20px]": gap === "sm" },
