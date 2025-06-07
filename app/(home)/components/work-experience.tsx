@@ -1,5 +1,5 @@
 import List from "@/app/_components/experience-list";
-import ExternalLink from "@/app/_components/links/external-link";
+import NavigationLink from "@/app/_components/links/navigation-link";
 import { Job, listJobs } from "@/app/_db/jobs";
 
 export default async function WorkExperience() {
@@ -11,7 +11,7 @@ export default async function WorkExperience() {
         <List.Title> Work Experience</List.Title>
       </List.ItemLeft>
       <List.ItemRight>
-        <List gap="xs">
+        <List gap="sm">
           {jobs.map(
             ({
               id,
@@ -24,9 +24,9 @@ export default async function WorkExperience() {
               if (summary.length > 0) {
                 return (
                   <List.Item key={id}>
-                    <ExternalLink key={id} href={`/job/${id}`}>
+                    <NavigationLink key={id} href={`/job/${id}`}>
                       {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
-                    </ExternalLink>
+                    </NavigationLink>
                   </List.Item>
                 );
               } else
