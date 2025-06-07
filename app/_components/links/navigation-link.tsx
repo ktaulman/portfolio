@@ -12,7 +12,7 @@ export default function NavigationLink({
 }: NavigationLinkProps) {
   return (
     <Link
-      className={"w-full underline underline-offset-4 text-blue-900"}
+      className={"w-full underline underline-offset-4 text-blue-900 text-sm"}
       href={href}
     >
       {children}

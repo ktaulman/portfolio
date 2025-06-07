@@ -10,13 +10,18 @@ export default async function PersonalExperience() {
         <List.Title>Personal</List.Title>
       </List.ItemLeft>
       <List.ItemRight>
-        <List.Description>
+        <List gap="xs">
           {projects.map(({ id, title, startYear, endYear }) => (
-            <NavigationLink key={id} href={`/project/${id}`}>
-              {`${startYear} ${endYear} · ${title}`}
-            </NavigationLink>
+            <List.Item key={id}>
+              <NavigationLink key={id} href={`/project/${id}`}>
+                {startYear === endYear
+                  ? `${endYear}`
+                  : `${startYear} - ${endYear}`}
+                {` · ${title}`}
+              </NavigationLink>
+            </List.Item>
           ))}
-        </List.Description>
+        </List>
       </List.ItemRight>
     </List.Item>
   );

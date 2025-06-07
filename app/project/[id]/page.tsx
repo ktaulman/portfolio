@@ -21,32 +21,49 @@ export default async function ProjectPage({
   return (
     <List gap="md">
       <List.Item>
-        <List.Title>
-          <span className="font-bold">{title}</span>
-        </List.Title>
-        <List.Description></List.Description>
+        <List.ItemLeft>
+          {" "}
+          <></>
+        </List.ItemLeft>
+
+        <List.ItemRight>
+          <List.Title>
+            <span className="font-bold">{title}</span>
+          </List.Title>
+        </List.ItemRight>
       </List.Item>
 
       <List.Item>
-        <List.Title>Website</List.Title>
-        <List.ExternalLink href={website}>{website}</List.ExternalLink>
+        <List.ItemLeft>
+          <List.Title>Website</List.Title>
+        </List.ItemLeft>
+        <List.ItemRight>
+          <List.ExternalLink href={website}>
+            {website || "COMING SOON"}
+          </List.ExternalLink>
+        </List.ItemRight>
       </List.Item>
       <List.Item>
-        <List.Title>Summary</List.Title>
-        <List.Description>{summary}</List.Description>
+        <List.ItemLeft>
+          <List.Title>Summary</List.Title>
+        </List.ItemLeft>
+        <List.ItemRight>
+          <List.Description>{summary}</List.Description>
+        </List.ItemRight>
       </List.Item>
       <List.Item>
-        <List.Title>Description</List.Title>
-        <List gap="none">
-          {description.map((paragraph) => (
-            <List.Item>
-              <p className="w-full mb-2">
-                <span className="font-extrabold text-xl mr-2">·</span>
-                {paragraph}
-              </p>
-            </List.Item>
-          ))}
-        </List>
+        <List.ItemLeft>
+          <List.Title>Description</List.Title>
+        </List.ItemLeft>
+        <List.ItemRight>
+          <List gap="xs">
+            {description.map((paragraph) => (
+              <List.Item key={paragraph}>
+                <List.Description> · {paragraph}</List.Description>
+              </List.Item>
+            ))}
+          </List>
+        </List.ItemRight>
       </List.Item>
     </List>
   );

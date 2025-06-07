@@ -6,10 +6,10 @@ export default function Loading() {
     <List gap="sm">
       <List.Item>
         <List.ItemLeft>
-          <></>
+          <Skeleton animate variant="rounded" height={30} width={120} />
         </List.ItemLeft>
         <List.ItemRight>
-          <Skeleton animate variant="rounded" height={30} width={200} />
+          <></>
         </List.ItemRight>
       </List.Item>
 

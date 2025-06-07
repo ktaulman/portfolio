@@ -4,12 +4,13 @@ import clsx from "clsx";
 
 interface ListProps {
   children: ReactNode;
-  gap: "none" | "sm" | "md" | "lg";
+  gap: "none" | "xs" | "sm" | "md" | "lg";
 }
 function List({ children, gap }: ListProps) {
   const className = clsx([
-    "flex flex-col items-between text-base tracking-wider text-black",
+    "flex flex-col items-between text-base tracking-wider text-black ",
     { "gap-[0px]": gap === "none" },
+    { "gap-[10px]": gap === "xs" },
     { "gap-[20px]": gap === "sm" },
     { "gap-[60px]": gap === "md" },
     { "gap-[300px]": gap === "lg" },
@@ -25,7 +26,7 @@ function Item({ children }: ItemProps) {
   return <li className="flex w-full ">{children}</li>;
 }
 function ItemLeft({ children }: ItemProps) {
-  return <div className="flex-1/4">{children}</div>;
+  return <div className="flex-1/4 justify-end items-center">{children}</div>;
 }
 function ItemRight({ children }: ItemProps) {
   return <div className="flex-3/4">{children}</div>;
@@ -33,17 +34,13 @@ function ItemRight({ children }: ItemProps) {
 
 function Title({ children }: { children: ReactNode }) {
   return (
-    <h2 className="flex-1/4 text-right pr-15 font-semibold text-sm tracking-wide">
+    <h2 className="font-semibold text-sm tracking-wide leading-2">
       {children}
     </h2>
   );
 }
 function Description({ children }: { children: ReactNode }) {
-  return (
-    <p className="flex-3/4 flex flex-col gap-2 items-start text-sm">
-      {children}
-    </p>
-  );
+  return <p className="gap-2 items-start text-sm leading-8">{children}</p>;
 }
 interface NavigationLinkProps {
   children: ReactNode;
@@ -67,7 +64,7 @@ interface ExternalLinkProps {
 function ExternalLink({ children, href }: ExternalLinkProps) {
   return (
     <a
-      className="flex-3/4 underline underline-offset-4 text-blue-900"
+      className="flex-3/4 underline underline-offset-4 text-sm text-blue-900"
       target="_blank"
       href={href}
     >

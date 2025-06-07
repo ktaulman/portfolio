@@ -11,31 +11,37 @@ export default async function WorkExperience() {
         <List.Title> Work Experience</List.Title>
       </List.ItemLeft>
       <List.ItemRight>
-        {jobs.map(
-          ({
-            id,
-            company,
-            title,
-            summary,
-            startMonthYear,
-            endMonthYear,
-          }: Job) => {
-            if (summary.length > 0) {
-              return (
-                <NavigationLink key={id} href={`/job/${id}`}>
-                  {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
-                </NavigationLink>
-              );
-            } else
-              return (
-                <List.Description>
-                  <span key={id}>
-                    {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
-                  </span>
-                </List.Description>
-              );
-          }
-        )}
+        <List gap="xs">
+          {jobs.map(
+            ({
+              id,
+              company,
+              title,
+              summary,
+              startMonthYear,
+              endMonthYear,
+            }: Job) => {
+              if (summary.length > 0) {
+                return (
+                  <List.Item key={id}>
+                    <NavigationLink key={id} href={`/job/${id}`}>
+                      {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
+                    </NavigationLink>
+                  </List.Item>
+                );
+              } else
+                return (
+                  <List.Item key={id}>
+                    <List.Description>
+                      <span key={id}>
+                        {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
+                      </span>
+                    </List.Description>
+                  </List.Item>
+                );
+            }
+          )}
+        </List>
       </List.ItemRight>
     </List.Item>
   );

@@ -20,37 +20,55 @@ export default async function JobsPage({
   if (!job) notFound();
   const { company, location, title, website, summary, description } = job;
   return (
-    <List gap="md">
+    <List gap="sm">
       <List.Item>
-        <List.Title>
+        <List.ItemLeft>
+          <></>
+        </List.ItemLeft>
+        <List.ItemRight>
           <span className="font-bold">
             {company} , {title}
           </span>
-        </List.Title>
+        </List.ItemRight>
       </List.Item>
 
       <List.Item>
-        <List.Title>Location</List.Title>
-        <List.Description>{location}</List.Description>
+        <List.ItemLeft>
+          <List.Title>Location</List.Title>
+        </List.ItemLeft>
+        <List.ItemRight>
+          <List.Description>{location}</List.Description>
+        </List.ItemRight>
       </List.Item>
       <List.Item>
-        <List.Title>Website</List.Title>
-        <List.ExternalLink href={website}>{website}</List.ExternalLink>
+        <List.ItemLeft>
+          <List.Title>Website</List.Title>
+        </List.ItemLeft>
+        <List.ItemRight>
+          <List.ExternalLink href={website}>{website}</List.ExternalLink>
+        </List.ItemRight>
       </List.Item>
       <List.Item>
-        <List.Title>Summary</List.Title>
-        <List.Description>{summary}</List.Description>
+        <List.ItemLeft>
+          <List.Title>Summary</List.Title>
+        </List.ItemLeft>
+        <List.ItemRight>
+          <List.Description>{summary}</List.Description>
+        </List.ItemRight>
       </List.Item>
       <List.Item>
-        <List.Title>Description</List.Title>
-        <List.Description>
-          {description.map((paragraph) => (
-            <span className="w-full mb-2">
-              <span className="font-extrabold text-xl mr-2">·</span>
-              {paragraph}
-            </span>
-          ))}
-        </List.Description>
+        <List.ItemLeft>
+          <List.Title>Description</List.Title>
+        </List.ItemLeft>
+        <List.ItemRight>
+          <List gap="xs">
+            {description.map((paragraph) => (
+              <List.Item key={paragraph}>
+                <List.Description> · {paragraph}</List.Description>
+              </List.Item>
+            ))}
+          </List>
+        </List.ItemRight>
       </List.Item>
     </List>
   );
