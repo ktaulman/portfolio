@@ -1,6 +1,5 @@
-import { getJob, listJobs } from "../../_db/jobs";
+import { getJob, listJobs } from "@/app/_db/jobs";
 import { notFound } from "next/navigation";
-import JobCard from "./components/JobCard";
 import List from "@/app/_components/experience-list";
 
 export async function generateStaticParams() {

@@ -4,7 +4,7 @@ export default function Greeting() {
   return (
     <List.Item>
       <List.ItemLeft>
-        <List.Title>Hi, I'm Kevin</List.Title>
+        <List.Title>{`Hi, I'm Kevin`}</List.Title>
       </List.ItemLeft>
       <List.ItemRight>
         <List.Description>
