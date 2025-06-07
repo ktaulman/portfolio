@@ -58,6 +58,7 @@ const jobs: Job[] = [
     company: "Autumn Doors",
     title: "Fullstack Developer (Contract)",
     location: "Atlanta, GA, USA",
+    website: "https://www.autumndoors.store",
     summary:
       "Developed a greenfield e-commerce site for sliding barn doors in Texas and Florida.",
     description: [
@@ -72,6 +73,7 @@ const jobs: Job[] = [
     company: "Twilio",
     title: "Commercial Account Executive",
     location: "San Francisco, CA, USA",
+    summary: "",
     description: [],
     images: [],
     startMonthYear: "09/2017",
@@ -81,6 +83,7 @@ const jobs: Job[] = [
     company: "Gartner",
     title: "Account Executive",
     location: "Fort Myers, FL, USA",
+    summary: "",
     description: [],
     images: [],
     startMonthYear: "08/2012",

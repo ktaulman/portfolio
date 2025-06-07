@@ -1,10 +1,10 @@
 import { getJob, listJobs } from "../../_db/jobs";
 import { notFound } from "next/navigation";
 import JobCard from "./components/JobCard";
+import List from "@/app/_components/experience-list";
 
 export async function generateStaticParams() {
   const jobs = await listJobs();
-  console.log({ jobs });
   return jobs.map((job) => ({
     id: String(job.id),
   }));
@@ -18,41 +18,40 @@ export default async function JobsPage({
   const { id } = await params;
   const job = await getJob(parseInt(id, 10));
   if (!job) notFound();
-  const { company, location, title, website, description } = job;
+  const { company, location, title, website, summary, description } = job;
   return (
-    <JobCard>
-      <JobCard.Header>
-        <JobCard.HeaderTitle>{title}</JobCard.HeaderTitle>
-        <JobCard.HeaderCompanyName>{company}</JobCard.HeaderCompanyName>
-      </JobCard.Header>
+    <List gap="md">
+      <List.Item>
+        <List.Title>
+          <span className="font-bold">
+            {company} , {title}
+          </span>
+        </List.Title>
+      </List.Item>
 
-      <JobCard.Detail>
-        <JobCard.DetailTitle>Location</JobCard.DetailTitle>
-        <JobCard.DetailDescription>{location}</JobCard.DetailDescription>
-      </JobCard.Detail>
-
-      <JobCard.Detail>
-        <JobCard.DetailTitle>Website</JobCard.DetailTitle>
-        <JobCard.DetailDescription>
-          <a href={website} target="_blank" rel="noopener noreferrer">
-            {job.website}
-          </a>
-        </JobCard.DetailDescription>
-      </JobCard.Detail>
-      <JobCard.Detail>
-        <JobCard.DetailTitle>Summary</JobCard.DetailTitle>
-        <JobCard.DetailDescription>
-          Contributed tto frontend development of a Fintech SaaS Platform
-        </JobCard.DetailDescription>
-      </JobCard.Detail>
-      <JobCard.Detail>
-        <JobCard.DetailTitle>Description</JobCard.DetailTitle>
-        {description.map((item, index) => (
-          <JobCard.DetailDescription key={`job_description_${index}`}>
-            - {item}
-          </JobCard.DetailDescription>
-        ))}
-      </JobCard.Detail>
-    </JobCard>
+      <List.Item>
+        <List.Title>Location</List.Title>
+        <List.Description>{location}</List.Description>
+      </List.Item>
+      <List.Item>
+        <List.Title>Website</List.Title>
+        <List.ExternalLink href={website}>{website}</List.ExternalLink>
+      </List.Item>
+      <List.Item>
+        <List.Title>Summary</List.Title>
+        <List.Description>{summary}</List.Description>
+      </List.Item>
+      <List.Item>
+        <List.Title>Description</List.Title>
+        <List.Description>
+          {description.map((paragraph) => (
+            <span className="w-full mb-2">
+              <span className="font-extrabold text-xl mr-2">·</span>
+              {paragraph}
+            </span>
+          ))}
+        </List.Description>
+      </List.Item>
+    </List>
   );
 }

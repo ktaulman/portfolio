@@ -1,24 +1,48 @@
 import { ReactNode } from "react";
 import Link from "next/link";
+import clsx from "clsx";
 
-function ExperienceList({ children }: { children: ReactNode }) {
-  return (
-    <ol className="flex flex-col items-between gap-24 text-base tracking-wider text-black">
-      {children}
-    </ol>
-  );
+interface ListProps {
+  children: ReactNode;
+  gap: "none" | "sm" | "md" | "lg";
+}
+function List({ children, gap }: ListProps) {
+  const className = clsx([
+    "flex flex-col items-between text-base tracking-wider text-black",
+    { "gap-[0px]": gap === "none" },
+    { "gap-[20px]": gap === "sm" },
+    { "gap-[60px]": gap === "md" },
+    { "gap-[300px]": gap === "lg" },
+  ]);
+
+  return <ul className={className}>{children}</ul>;
 }
 
-function Item({ children }: { children: ReactNode }) {
-  return <li className="flex w-full">{children}</li>;
+interface ItemProps {
+  children: ReactNode;
+}
+function Item({ children }: ItemProps) {
+  return <li className="flex w-full ">{children}</li>;
+}
+function ItemLeft({ children }: ItemProps) {
+  return <div className="flex-1/4">{children}</div>;
+}
+function ItemRight({ children }: ItemProps) {
+  return <div className="flex-3/4">{children}</div>;
 }
 
 function Title({ children }: { children: ReactNode }) {
-  return <h2 className="w-1/4 ">{children}</h2>;
+  return (
+    <h2 className="flex-1/4 text-right pr-15 font-semibold text-sm tracking-wide">
+      {children}
+    </h2>
+  );
 }
 function Description({ children }: { children: ReactNode }) {
   return (
-    <p className="w-3/4 text-sm flex flex-col gap-6 items-start ">{children}</p>
+    <p className="flex-3/4 flex flex-col gap-2 items-start text-sm">
+      {children}
+    </p>
   );
 }
 interface NavigationLinkProps {
@@ -43,7 +67,8 @@ interface ExternalLinkProps {
 function ExternalLink({ children, href }: ExternalLinkProps) {
   return (
     <a
-      className="w-full underline underline-offset-4 text-blue-900"
+      className="flex-3/4 underline underline-offset-4 text-blue-900"
+      target="_blank"
       href={href}
     >
       {children}
@@ -51,10 +76,12 @@ function ExternalLink({ children, href }: ExternalLinkProps) {
   );
 }
 
-ExperienceList.Item = Item;
-ExperienceList.Title = Title;
-ExperienceList.Description = Description;
-ExperienceList.NavigationLink = NavigationLink;
-ExperienceList.ExternalLink = ExternalLink;
+List.Item = Item;
+List.ItemRight = ItemRight;
+List.ItemLeft = ItemLeft;
+List.Title = Title;
+List.Description = Description;
+List.NavigationLink = NavigationLink;
+List.ExternalLink = ExternalLink;
 
-export default ExperienceList;
+export default List;

@@ -3,8 +3,8 @@ import clsx from "clsx";
 interface SkeletonProps {
   variant: "text" | "circle" | "rectangle" | "rounded";
   animate?: boolean;
-  width: number;
-  height: number;
+  width: number | string;
+  height: number | string;
 }
 
 export default function Skeleton({

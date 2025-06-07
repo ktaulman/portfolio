@@ -1,21 +1,42 @@
-import ExperienceList from "@/app/_components/experience-list";
-import { Job, listJobs } from "../../_db/jobs";
+import List from "@/app/_components/experience-list";
+import NavigationLink from "@/app/_components/links/navigation-link";
+import { Job, listJobs } from "@/app/_db/jobs";
 
 export default async function WorkExperience() {
   const jobs = await listJobs();
 
   return (
-    <ExperienceList.Item>
-      <ExperienceList.Title> Work Experience</ExperienceList.Title>
-      <ExperienceList.Description>
+    <List.Item>
+      <List.ItemLeft>
+        <List.Title> Work Experience</List.Title>
+      </List.ItemLeft>
+      <List.ItemRight>
         {jobs.map(
-          ({ id, company, title, startMonthYear, endMonthYear }: Job) => (
-            <ExperienceList.NavigationLink key={id} href={`/job/${id}`}>
-              {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
-            </ExperienceList.NavigationLink>
-          )
+          ({
+            id,
+            company,
+            title,
+            summary,
+            startMonthYear,
+            endMonthYear,
+          }: Job) => {
+            if (summary.length > 0) {
+              return (
+                <NavigationLink key={id} href={`/job/${id}`}>
+                  {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
+                </NavigationLink>
+              );
+            } else
+              return (
+                <List.Description>
+                  <span key={id}>
+                    {`${startMonthYear} - ${endMonthYear} · ${company}, ${title}`}
+                  </span>
+                </List.Description>
+              );
+          }
         )}
-      </ExperienceList.Description>
-    </ExperienceList.Item>
+      </List.ItemRight>
+    </List.Item>
   );
 }

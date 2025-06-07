@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import ExperienceList from "../_components/experience-list";
+import List from "../_components/experience-list";
 import Greeting from "@/app/(home)/components/greeting";
 import WorkExperience from "@/app/(home)/components/work-experience";
 import PersonalExperience from "@/app/(home)/components/personal-experience";
@@ -8,7 +8,7 @@ import Other from "./components/other";
 
 export default async function Home() {
   return (
-    <ExperienceList>
+    <List gap={"md"}>
       <Greeting />
       <Suspense fallback={<ExperienceSkeleton title="Work Experience" />}>
         <WorkExperience />
@@ -19,6 +19,6 @@ export default async function Home() {
       </Suspense>
 
       <Other />
-    </ExperienceList>
+    </List>
   );
 }

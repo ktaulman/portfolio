@@ -1,13 +1,17 @@
-import ExperienceList from "@/app/_components/experience-list";
+import List from "@/app/_components/experience-list";
 
 export default function Greeting() {
   return (
-    <ExperienceList.Item>
-      <ExperienceList.Title>Hi, I'm Kevin</ExperienceList.Title>
-      <ExperienceList.Description>
-        Building SaaS with focus on Front-End. Currently returning from break.
-        Experience in startups, fintech, and enterprise development.
-      </ExperienceList.Description>
-    </ExperienceList.Item>
+    <List.Item>
+      <List.ItemLeft>
+        <List.Title>Hi, I'm Kevin</List.Title>
+      </List.ItemLeft>
+      <List.ItemRight>
+        <List.Description>
+          Building SaaS with focus on Front-End. Currently returning from break.
+          Experience in startups, fintech, and enterprise development.
+        </List.Description>
+      </List.ItemRight>
+    </List.Item>
   );
 }
