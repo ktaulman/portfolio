@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   title: "Kevin's Portfolio",
   description: "A showcase of my work.",
 };
-const openSans = Open_Sans();
+//
+const openSans = Open_Sans({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
