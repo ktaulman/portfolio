@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Link from "next/link";
 import clsx from "clsx";
 
 interface ListProps {
@@ -42,43 +41,11 @@ function Title({ children }: { children: ReactNode }) {
 function Description({ children }: { children: ReactNode }) {
   return <p className="gap-2 items-start text-sm leading-8">{children}</p>;
 }
-interface NavigationLinkProps {
-  children: ReactNode;
-  href: string;
-}
-
-function NavigationLink({ children, href }: NavigationLinkProps) {
-  return (
-    <Link
-      className={"w-full underline underline-offset-4 text-blue-900"}
-      href={href}
-    >
-      {children}
-    </Link>
-  );
-}
-interface ExternalLinkProps {
-  children: ReactNode;
-  href: string;
-}
-function ExternalLink({ children, href }: ExternalLinkProps) {
-  return (
-    <a
-      className="flex-3/4 underline underline-offset-4 text-sm text-blue-900"
-      target="_blank"
-      href={href}
-    >
-      {children}
-    </a>
-  );
-}
 
 List.Item = Item;
 List.ItemRight = ItemRight;
 List.ItemLeft = ItemLeft;
 List.Title = Title;
 List.Description = Description;
-List.NavigationLink = NavigationLink;
-List.ExternalLink = ExternalLink;
 
 export default List;

@@ -1,4 +1,5 @@
 import List from "@/app/_components/experience-list";
+import ExternalLink from "@/app/_components/links/external-link";
 
 export default function Other() {
   return (
@@ -9,14 +10,14 @@ export default function Other() {
       <List.ItemRight>
         <List gap="xs">
           <List.Item>
-            <List.ExternalLink href="https://www.github.com/ktaulman">
+            <ExternalLink href="https://www.github.com/ktaulman">
               Github
-            </List.ExternalLink>
+            </ExternalLink>
           </List.Item>
           <List.Item>
-            <List.ExternalLink href="https://www.linkedin.com/in/ktaulman">
+            <ExternalLink href="https://www.linkedin.com/in/ktaulman">
               Linkedin
-            </List.ExternalLink>
+            </ExternalLink>
           </List.Item>
         </List>
       </List.ItemRight>

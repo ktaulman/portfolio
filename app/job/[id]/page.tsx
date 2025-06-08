@@ -1,6 +1,7 @@
 import { getJob, listJobs } from "@/app/_db/jobs";
 import { notFound } from "next/navigation";
 import List from "@/app/_components/experience-list";
+import ExternalLink from "@/app/_components/links/external-link";
 
 export async function generateStaticParams() {
   const jobs = await listJobs();
@@ -44,7 +45,7 @@ export default async function JobsPage({
           <List.Title>Website</List.Title>
         </List.ItemLeft>
         <List.ItemRight>
-          <List.ExternalLink href={website}>{website}</List.ExternalLink>
+          <ExternalLink href={website}>{website}</ExternalLink>
         </List.ItemRight>
       </List.Item>
       <List.Item>

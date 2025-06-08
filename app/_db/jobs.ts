@@ -45,10 +45,9 @@ const jobs: Job[] = [
     website: "https://www.remax.com",
     location: "Atlanta, GA, USA",
     summary:
-      "Developed and maintained a greenfield data visualization web app for national real estate datasets, delivered ahead of schedule and under budget.",
+      "Frontend Engineer on a product team of five that developed, delivered, and maintained a greenfield, data visualization web app. Used for Sales demos of RE/MAX’s national real estate point and polygon data across multiple datasets (Address, Property, Residential, Census) on interactive Google maps. Product delivery was ahead of Q2 2022 timeline with more functionality than originally scoped and under budget.",
     description: [
-      "Built as a Vue SPA with VueX for state management and Vue Router for protected routing.",
-      "Integrated Google Maps for interactive heatmaps, demographic display cards, custom filtering, and gesture-based refreshing.",
+      "Developed as a Vue Single-Page Application. Centralized state management with VueX and implemented protected app routing with Vue Router for authed and unauthed users. Used Tailwind CSS for styling and theming. Implemented GCPs Google Maps Javascript API for features such as interactive heatmaps, clickable points with display cards for demographic data, custom filtering map controls, and gesture-based map refreshing.",
     ],
     images: [],
     startMonthYear: "10/2021",
@@ -60,10 +59,10 @@ const jobs: Job[] = [
     location: "Atlanta, GA, USA",
     website: "https://www.autumndoors.store",
     summary:
-      "Developed a greenfield e-commerce site for sliding barn doors in Texas and Florida.",
+      "Fullstack website development of a greenfield e-commerce site selling sliding barn doors for household interiors. Company operated in the states of Texas and Florida.",
     description: [
       "Frontend in React; backend in Node.js, deployed on AWS (S3, EC2, Route 53, CloudFront, ACM).",
-      "Features: Stripe payments, interactive door builder, invoice/order templating with email notifications, and tax compliance service.",
+      " Developed features including online ordering with Stripe payment processing, an interactive door builder with thousands of combinations, invoice & order form templating with email notifications, and basic Tax calculation service for tax compliance in local sales territories.",
     ],
     images: [],
     startMonthYear: "02/2021",
