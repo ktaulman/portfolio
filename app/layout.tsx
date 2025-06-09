@@ -17,8 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.className}>
       <body>
-        <main className="h-screen w-screen flex justify-start items-start p-24">
-          <section className="max-w-6xl min-w-6xl h-3/4">{children}</section>
+        <main className="h-screen w-screen flex justify-start items-start p-8 lg:p-24">
+          <section className="max-w-3xl h-3/4">{children}</section>
         </main>
       </body>
     </html>

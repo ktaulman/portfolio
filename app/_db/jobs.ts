@@ -98,8 +98,6 @@ const jobs: Job[] = [
 export async function listJobs() {
   return jobs;
 }
-
 export async function getJob(id: number) {
-  await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate a delay for demonstration purposes
   return jobs.find((job) => job.id === id);
 }

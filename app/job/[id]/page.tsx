@@ -45,7 +45,7 @@ export default async function JobsPage({
           <List.Title>Website</List.Title>
         </List.ItemLeft>
         <List.ItemRight>
-          <ExternalLink href={website}>{website}</ExternalLink>
+          <ExternalLink href={website}> {new URL(website).host}</ExternalLink>
         </List.ItemRight>
       </List.Item>
       <List.Item>

@@ -22,13 +22,13 @@ interface ItemProps {
   children: ReactNode;
 }
 function Item({ children }: ItemProps) {
-  return <li className="flex w-full ">{children}</li>;
+  return <li className="flex w-full flex-col gap-6">{children}</li>;
 }
 function ItemLeft({ children }: ItemProps) {
-  return <div className="flex-1/4 justify-end items-center">{children}</div>;
+  return <div className="flex-row justify-end items-center">{children}</div>;
 }
 function ItemRight({ children }: ItemProps) {
-  return <div className="flex-3/4">{children}</div>;
+  return <div className="flex-3/4 sm:flex-row">{children}</div>;
 }
 
 function Title({ children }: { children: ReactNode }) {
